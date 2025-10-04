@@ -52,18 +52,50 @@
    
     > Package ini berisi class Main yang menjadi entry point program. Class ini berfungsi sebagai View, yaitu menampilkan menu utama kepada user dan menerima input pilihan. Setelah menerima input, class ini akan memanggil fungsi yang sesuai di Controller (Service). Karena hanya berfungsi sebagai antarmuka pengguna, class ini tidak diwajibkan memiliki properti maupun konstruktor.
 
+---
+
+<h1 align="center">📌 Pembuatan Database 📌</h1>
+
+> <img width="1920" height="1080" alt="Screenshot (676)" src="https://github.com/user-attachments/assets/1fa17ca4-077a-497c-a7ee-0b0578e9e980" />
+
+> <img width="1920" height="1080" alt="Screenshot (678)" src="https://github.com/user-attachments/assets/99260324-5eca-4cad-b0a4-36cf6485e2e6" />
+
+> <img width="1920" height="1080" alt="Screenshot (679)" src="https://github.com/user-attachments/assets/3713e595-3f70-4c1c-b72f-0dc70400bea1" />
 
 ---
 
 <h1 align="center">📌 Penjelasan Penerapan JDBC 📌</h1>
 
-sss
+> <img width="117" height="24" alt="image" src="https://github.com/user-attachments/assets/4df4c109-9352-4902-b240-338dd621f4b8" />
+
+> JDBC pada program ini terletak pada kelas com.mycompany.posttest1.db.DbViewer.
+
+> <img width="799" height="72" alt="image" src="https://github.com/user-attachments/assets/f5233a0b-d623-4706-a301-b88056bcfd62" />
+
+> Digunakan untuk memuat driver MySQL (Class.forName), membuka koneksi ke database (DriverManager.getConnection), mengeksekusi SQL (Statement/ResultSet pada SELECT barang), dan menampilkan hasilnya ke konsol.
+
 
 ---
 
 <h1 align="center">📌 Penjelasan Penerapan ORM 📌</h1>
 
-sss
+**1. BarangEntity.Java**
+
+   > <img width="145" height="26" alt="image" src="https://github.com/user-attachments/assets/6c75ceb0-deb4-4fc1-bf9b-8260f85f654a" />
+   
+   > <img width="468" height="169" alt="image" src="https://github.com/user-attachments/assets/9b354ad8-9f7a-41a2-87b9-ae928ccb58db" />
+
+**2. Persistence.xml**
+
+   > <img width="124" height="26" alt="image" src="https://github.com/user-attachments/assets/73f73f7e-fe12-445f-9725-19b62ef20845" />
+   
+   > <img width="685" height="465" alt="image" src="https://github.com/user-attachments/assets/71467555-a1fa-442f-bb1e-b82ed128c96c" />
+   
+   > <img width="400" height="131" alt="image" src="https://github.com/user-attachments/assets/c859b051-df53-43d2-916d-38223de1ad46" />
+   
+   > <img width="734" height="240" alt="image" src="https://github.com/user-attachments/assets/6562e09d-34f7-4373-982f-34b980ce1770" />
+
+> Tampilan Jika Berhasil di Build
 
 ---
 
@@ -280,7 +312,8 @@ Program yang saya buat terdiri dari beberapa kelas yang memiliki peran masing-ma
 
    > Kelas Main.java terdapat di Packages com.mycompany.posttest1.main. Kelas Main berfungsi sebagai titik masuk utama program. 
 
-   > <img width="884" height="781" alt="image" src="https://github.com/user-attachments/assets/bee6126e-1e87-47b4-a9c0-98c24bf7d428" />
+   > <img width="912" height="839" alt="image" src="https://github.com/user-attachments/assets/fa40a409-3091-441c-a692-77072f4eebbe" />
+
    
    > Kelas utama berada di Main.java yang berfungsi sebagai entry point program. Di dalam kelas ini terdapat menu interaktif yang digunakan pengguna untuk menambah, menampilkan, memperbarui, menghapus, dan mencari data barang. Main juga menjadi penghubung langsung dengan kelas Service agar logika program dapat berjalan sesuai perintah pengguna.
     
