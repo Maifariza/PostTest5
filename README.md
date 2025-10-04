@@ -72,8 +72,9 @@
 
 > <img width="918" height="160" alt="image" src="https://github.com/user-attachments/assets/05b06343-476f-4d7e-82d0-e2eca9774dd0" />
 
-> Digunakan untuk memuat driver MySQL (Class.forName), membuka koneksi ke database (DriverManager.getConnection), mengeksekusi SQL (Statement/ResultSet pada SELECT barang), dan menampilkan hasilnya ke konsol.
+> Pada program ini, penerapan JDBC (Java Database Connectivity) berperan sebagai jembatan antara aplikasi Java dengan basis data MySQL. JDBC memungkinkan aplikasi tidak hanya berjalan dengan logika di dalam kode, tetapi juga mampu mengambil dan menampilkan data yang tersimpan di dalam tabel basis data.
 
+> Pada kelas ini, pertama-tama program memuat driver MySQL melalui perintah Class.forName("com.mysql.cj.jdbc.Driver"). Driver ini ibarat sopir yang mengantar aplikasi menuju database. Setelah driver siap, program membuka koneksi ke database lelangdb menggunakan DriverManager.getConnection dengan alamat, nama pengguna, dan kata sandi yang sudah ditentukan. Setelah berhasil terhubung, DbViewer menjalankan kueri SQL berupa SELECT untuk mengambil data barang.
 
 ---
 
@@ -82,17 +83,27 @@
 **1. BarangEntity.Java**
 
    > <img width="145" height="26" alt="image" src="https://github.com/user-attachments/assets/6c75ceb0-deb4-4fc1-bf9b-8260f85f654a" />
+
+   > Pada program ini, penerapan ORM (Object Relational Mapping) terlihat pada kelas BarangEntity. ORM adalah teknik yang digunakan untuk menjembatani objek dalam bahasa pemrograman Java dengan tabel di basis data relasional. Dengan pendekatan ini, pengembang tidak perlu lagi menulis banyak kode SQL secara manual, karena setiap objek Java dapat secara otomatis dipetakan ke baris data pada tabel.
    
    > <img width="468" height="169" alt="image" src="https://github.com/user-attachments/assets/9b354ad8-9f7a-41a2-87b9-ae928ccb58db" />
+
+   > Kelas BarangEntity diberi anotasi @Entity dan @Table(name = "barang"), yang berarti kelas tersebut akan dipetakan langsung ke tabel barang di dalam database. Atribut id ditandai dengan anotasi @Id sebagai primary key, kemudian diberi anotasi @GeneratedValue(strategy = GenerationType.IDENTITY) agar nilainya diisi secara otomatis oleh database (auto increment). Selain itu, anotasi @Column(name = "id") menunjukkan bahwa atribut id pada kelas Java dipetakan ke kolom id pada tabel database.
 
 **2. Persistence.xml**
 
    > <img width="124" height="26" alt="image" src="https://github.com/user-attachments/assets/73f73f7e-fe12-445f-9725-19b62ef20845" />
+
+   > Pada program ini, penerapan ORM tidak hanya terlihat pada kelas BarangEntity, tetapi juga pada pengaturan persistence.xml serta penggunaan EntityManager.
    
    > <img width="685" height="465" alt="image" src="https://github.com/user-attachments/assets/71467555-a1fa-442f-bb1e-b82ed128c96c" />
+
+   > File persistence.xml berisi definisi persistence unit dengan nama lelangPU. Persistence unit inilah yang menjadi jembatan antara kode program dengan basis data. Di dalamnya tercantum informasi penting seperti: jenis pustaka yang digunakan (Hibernate JPA 3.0), alamat koneksi database MySQL, serta entitas yang akan dipetakan, yakni BarangEntity. Dengan adanya pengaturan ini, Hibernate tahu bagaimana cara menghubungkan objek Java ke tabel yang sesuai di dalam database.
    
    > <img width="400" height="131" alt="image" src="https://github.com/user-attachments/assets/c859b051-df53-43d2-916d-38223de1ad46" />
-   
+
+   > Selanjutnya, penggunaan EntityManager menjadi inti dari ORM. Dengan memanggil EntityManager em = ..., program dapat mulai bertransaksi dengan basis data tanpa perlu menulis SQL secara manual.
+
    > <img width="734" height="240" alt="image" src="https://github.com/user-attachments/assets/6562e09d-34f7-4373-982f-34b980ce1770" />
 
 > Tampilan Jika Berhasil di Build
