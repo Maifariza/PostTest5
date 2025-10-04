@@ -70,7 +70,7 @@
 
 > JDBC pada program ini terletak pada kelas com.mycompany.posttest1.db.DbViewer.
 
-> <img width="799" height="72" alt="image" src="https://github.com/user-attachments/assets/f5233a0b-d623-4706-a301-b88056bcfd62" />
+> <img width="918" height="160" alt="image" src="https://github.com/user-attachments/assets/05b06343-476f-4d7e-82d0-e2eca9774dd0" />
 
 > Digunakan untuk memuat driver MySQL (Class.forName), membuka koneksi ke database (DriverManager.getConnection), mengeksekusi SQL (Statement/ResultSet pada SELECT barang), dan menampilkan hasilnya ke konsol.
 
