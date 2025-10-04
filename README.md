@@ -56,11 +56,11 @@
 
 <h1 align="center">📌 Pembuatan Database 📌</h1>
 
-> <img width="1920" height="1080" alt="Screenshot (676)" src="https://github.com/user-attachments/assets/1fa17ca4-077a-497c-a7ee-0b0578e9e980" />
+> <img width="754" height="357" alt="image" src="https://github.com/user-attachments/assets/5a8d1fba-aa1f-4c0e-8de0-31d7f2d1b8be" />
 
-> <img width="1920" height="1080" alt="Screenshot (678)" src="https://github.com/user-attachments/assets/99260324-5eca-4cad-b0a4-36cf6485e2e6" />
+> <img width="1169" height="930" alt="Screenshot (679)" src="https://github.com/user-attachments/assets/98c3c8cd-2462-4fb1-a237-d61250f23360" />
 
-> <img width="1920" height="1080" alt="Screenshot (679)" src="https://github.com/user-attachments/assets/3713e595-3f70-4c1c-b72f-0dc70400bea1" />
+> <img width="142" height="28" alt="image" src="https://github.com/user-attachments/assets/534b3c4d-8c1b-4491-8cdc-933e7abc1522" />
 
 ---
 
