@@ -269,7 +269,7 @@ Manfaat overriding terlihat ketika program menampilkan daftar barang atau hasil 
 
 <h1 align="center">✨ Struktur Program ✨</h1>
 
-> <img width="320" height="332" alt="image" src="https://github.com/user-attachments/assets/94fb60ab-124b-471c-95f1-94b9d912e031" />
+<img width="339" height="782" alt="image" src="https://github.com/user-attachments/assets/51249a34-432f-4546-b97a-1cf7b0eaf846" />
 
 
 Program yang saya buat terdiri dari beberapa kelas yang memiliki peran masing-masing. Berikut adalah penjelasannya.
@@ -694,3 +694,6 @@ Pengguna juga diarahkan untuk memperbaiki kesalahannya dan memasukkan angka yang
 <img width="457" height="254" alt="Screenshot 2025-09-09 125912" src="https://github.com/user-attachments/assets/67ec9884-670c-462b-8dd6-cbb210c67051" />
 
 Jika pengguna tidak mengetikkan apa pun (input kosong) lalu langsung menekan Enter pada saat diminta memilih menu, maka sistem akan membaca input tersebut sebagai tidak valid. Dalam kondisi ini, program tidak akan mengeksekusi perintah apa pun, melainkan langsung menampilkan pesan peringatan dan membawa pengguna kembali ke menu utama. Dengan begitu, alur program tetap aman, tidak terjadi error, dan pengguna diberi kesempatan untuk memilih ulang opsi yang benar.
+
+
+
