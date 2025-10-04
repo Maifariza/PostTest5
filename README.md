@@ -318,7 +318,18 @@ Manfaat overriding terlihat ketika program menampilkan daftar barang atau hasil 
 
 Program yang saya buat terdiri dari beberapa kelas yang memiliki peran masing-masing. Berikut adalah penjelasannya.
 
- **1. Main.java**
+ **1. DbViewer.java**
+
+ > <img width="233" height="36" alt="Screenshot 2025-10-05 065814" src="https://github.com/user-attachments/assets/ef0d1f19-4c3d-4ef4-8c8d-a99585a2be6d" />
+
+ > DbViewer.java berada di paket com.mycompany.posttest1.db. Kelas ini bertugas sebagai “pembaca” basis data dengan JDBC.
+
+ > <img width="912" height="803" alt="Screenshot 2025-10-05 065839" src="https://github.com/user-attachments/assets/7389d996-6222-4a94-b0d0-cac810e35c47" />
+
+ > Kelas ini memuat driver MySQL, membuka koneksi, menjalankan kueri SELECT, membaca hasil baris demi baris, lalu menutup seluruh secara aman. Dalam program ini, DbViewer dipanggil melalui Service.tampilkanDenganJDBC() dan terutama digunakan untuk mengecek atau meninjau data dengan cepat, menguji koneksi serta kueri, sekaligus menjadi jalur alternatif ketika Anda ingin melihat data tanpa melalui lapisan ORM (Hibernate/JPA).
+
+
+ **2. Main.java**
  
    > <img width="249" height="54" alt="image" src="https://github.com/user-attachments/assets/6fe02c80-1c21-4b84-a103-0f5112567975" />
 
@@ -329,7 +340,7 @@ Program yang saya buat terdiri dari beberapa kelas yang memiliki peran masing-ma
    
    > Kelas utama berada di Main.java yang berfungsi sebagai entry point program. Di dalam kelas ini terdapat menu interaktif yang digunakan pengguna untuk menambah, menampilkan, memperbarui, menghapus, dan mencari data barang. Main juga menjadi penghubung langsung dengan kelas Service agar logika program dapat berjalan sesuai perintah pengguna.
     
- **2. Service.java**
+ **3. Service.java**
 
    > <img width="257" height="49" alt="image" src="https://github.com/user-attachments/assets/433eb31f-4eba-4f4c-b9ac-c8391c03418c" />
 
@@ -353,7 +364,7 @@ Program yang saya buat terdiri dari beberapa kelas yang memiliki peran masing-ma
 
   >  - **Mencari Data (SEARCH)** , Melalui cariBarang(), pengguna dapat mencari data berdasarkan kata kunci nama, kategori, atau asal barang.
 
- **3. Penilaian.java**
+ **4. Penilaian.java**
 
    > <img width="268" height="135" alt="image" src="https://github.com/user-attachments/assets/79151e0c-d178-4080-b1ed-7abfecac2cc6" />
    
@@ -367,7 +378,7 @@ Program yang saya buat terdiri dari beberapa kelas yang memiliki peran masing-ma
 
    > Lalu, yang kedua Fleksibilitas (polimorfisme), implementasi dapat berbeda pada masing-masing subclass. Ketika estimasiNilai(...) dipanggil melalui referensi bertipe Barang, hasil yang diperoleh menyesuaikan jenis objek konkretnya. Dengan demikian, apabila suatu saat ditambahkan jenis barang baru, cukup membuat subclass baru yang memenuhi kontrak Penilaian tanpa mengubah kode yang sudah ada.
 
- **4. Barang.java**
+ **5. Barang.java**
  
    > <img width="268" height="135" alt="image" src="https://github.com/user-attachments/assets/79151e0c-d178-4080-b1ed-7abfecac2cc6" />
 
@@ -412,7 +423,7 @@ Program yang saya buat terdiri dari beberapa kelas yang memiliki peran masing-ma
 
    > Kelas barangUmum merupakan kelas turunan (subclass) yang meng-extends Barang untuk mewakili barang yang bukan lelang dan bukan warisan (misalnya hibah atau pembelian). Karena mewarisi dari Barang, seluruh atribut dasar seperti id, nama, kategori, asal, tahun, material, kondisi, sumber, dan hargaPerolehan sudah tersedia tanpa perlu didefinisikan ulang.
 
-**5. BarangEntity.java**
+**6. BarangEntity.java**
 
    > <img width="268" height="135" alt="image" src="https://github.com/user-attachments/assets/79151e0c-d178-4080-b1ed-7abfecac2cc6" />
 
@@ -423,7 +434,7 @@ Program yang saya buat terdiri dari beberapa kelas yang memiliki peran masing-ma
 
    > BarangEntity adalah entitas JPA yang menghubungkan objek Java dengan tabel barang di basis data. Kelas ini berfungsi sebagai representasi setiap baris data barang (seperti ID, nama, kategori, asal, dan sebagainya) yang dapat disimpan, diperbarui, dihapus, maupun dibaca melalui EntityManager (Hibernate/JPA).
 
-**6. Persistence.xml**
+**7. Persistence.xml**
 
    > <img width="229" height="74" alt="image" src="https://github.com/user-attachments/assets/ca1f6c15-cd0b-408c-b4d3-7bb4ac4de2f3" />
 
@@ -437,7 +448,7 @@ Program yang saya buat terdiri dari beberapa kelas yang memiliki peran masing-ma
 
    > Selanjutnya, penggunaan EntityManager menjadi inti dari ORM. Dengan memanggil EntityManager em = ..., program dapat mulai bertransaksi dengan basis data tanpa perlu menulis SQL secara manual.
 
-**7. Pom.xml [postTest1]**
+**8. Pom.xml [postTest1]**
 
   > <img width="171" height="53" alt="image" src="https://github.com/user-attachments/assets/9f9d7a0e-f7d8-442d-8a96-f8a9ef365aa1" />
 
@@ -462,7 +473,7 @@ Program yang saya buat terdiri dari beberapa kelas yang memiliki peran masing-ma
 >   - Memasang (install) hasil build ke repositori lokal Maven di komputer agar bisa digunakan oleh proyek lain.
 
 
-**8. Dependencies**
+**9. Dependencies**
 
    > <img width="295" height="146" alt="image" src="https://github.com/user-attachments/assets/5b1bafa1-af4a-4bee-a6d2-e77a8f991873" />
 
