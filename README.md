@@ -56,11 +56,16 @@
 
 <h1 align="center">📌 Database yang digunakan 📌</h1>
 
+> <img width="142" height="28" alt="image" src="https://github.com/user-attachments/assets/534b3c4d-8c1b-4491-8cdc-933e7abc1522" />
+
+> Data awal pada program ini tersimpan di dalam basis data MySQL dengan nama lelangdb. Database tersebut berfungsi sebagai tempat penyimpanan permanen seluruh koleksi barang pada aplikasi AntikAesthetic.
+
 > <img width="754" height="357" alt="image" src="https://github.com/user-attachments/assets/5a8d1fba-aa1f-4c0e-8de0-31d7f2d1b8be" />
 
 > <img width="1169" height="930" alt="Screenshot (679)" src="https://github.com/user-attachments/assets/98c3c8cd-2462-4fb1-a237-d61250f23360" />
 
-> <img width="142" height="28" alt="image" src="https://github.com/user-attachments/assets/534b3c4d-8c1b-4491-8cdc-933e7abc1522" />
+> Di dalam database lelangdb, terdapat satu tabel utama yaitu barang. Tabel ini menyimpan berbagai informasi terkait barang antik, seperti ID, tipe, nama, kategori, asal, tahun, material, kondisi, sumber, serta harga perolehan. Kolom id dijadikan sebagai primary key dan memiliki atribut auto_increment, sehingga setiap data baru yang ditambahkan akan otomatis mendapatkan nomor ID unik.
+
 
 ---
 
