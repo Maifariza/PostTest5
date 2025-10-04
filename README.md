@@ -54,7 +54,7 @@
 
 ---
 
-<h1 align="center">📌 Pembuatan Database 📌</h1>
+<h1 align="center">📌 Database yang digunakan 📌</h1>
 
 > <img width="754" height="357" alt="image" src="https://github.com/user-attachments/assets/5a8d1fba-aa1f-4c0e-8de0-31d7f2d1b8be" />
 
@@ -98,7 +98,7 @@
    
    > <img width="685" height="465" alt="image" src="https://github.com/user-attachments/assets/71467555-a1fa-442f-bb1e-b82ed128c96c" />
 
-   > File persistence.xml berisi definisi persistence unit dengan nama lelangPU. Persistence unit inilah yang menjadi jembatan antara kode program dengan basis data. Di dalamnya tercantum informasi penting seperti: jenis pustaka yang digunakan (Hibernate JPA 3.0), alamat koneksi database MySQL, serta entitas yang akan dipetakan, yakni BarangEntity. Dengan adanya pengaturan ini, Hibernate tahu bagaimana cara menghubungkan objek Java ke tabel yang sesuai di dalam database.
+   > File persistence.xml berisi definisi persistence unit dengan nama lelangPU. Persistence unit inilah yang menjadi jembatan antara kode program dengan basis data. Di dalamnya tercantum informasi penting seperti jenis pustaka yang digunakan (Hibernate JPA 3.0), alamat koneksi database MySQL, serta entitas yang akan dipetakan, yakni BarangEntity. Dengan adanya pengaturan ini, Hibernate tahu bagaimana cara menghubungkan objek Java ke tabel yang sesuai di dalam database.
    
    > <img width="400" height="131" alt="image" src="https://github.com/user-attachments/assets/c859b051-df53-43d2-916d-38223de1ad46" />
 
@@ -330,23 +330,27 @@ Program yang saya buat terdiri dari beberapa kelas yang memiliki peran masing-ma
 
    > Kelas Service berada pada package com.mycompany.posttest1.service dan bertanggung jawab atas logika bisnis serta operasi data aplikasi AntikAesthetic.
 
-   > <img width="863" height="861" alt="image" src="https://github.com/user-attachments/assets/c585e91a-ceb8-4be2-9ae2-409e471aae9c" />
+   > <img width="664" height="763" alt="image" src="https://github.com/user-attachments/assets/1badbe45-dae7-4131-b1c7-61ca22787a26" />
    
-   > Di dalamnya disediakan struktur penyimpanan List Barang untuk menampung seluruh koleksi, berikut counter nextId agar ID barang bertambah otomatis. Kelas ini juga menyimpan referensi Scanner dari Main untuk membaca input pengguna. Fungsi utama di Service meliputi:
+   > Kelas ini bertanggung jawab untuk menghubungkan antara input pengguna di konsol dengan proses penyimpanan dan pengelolaan data pada basis data. Di dalamnya terdapat penerapan dua pendekatan, yaitu JDBC melalui kelas DbViewer serta ORM (Object Relational Mapping) menggunakan JPA/Hibernate.
 
-  > - Seed Data, terdiri dari seedAwal() untuk mengisi data contoh agar program siap diuji tanpa input awal.
+   > Fungsi utama dalam kelas ini meliputi beberapa bagian berikut:
+   
+   >  - **Menampilkan Data (JDBC)** , melalui metode tampilkanDenganJDBC(), program menampilkan seluruh data barang langsung dari database menggunakan kelas DbViewer.
+    
+   >  - **Menampilkan Data (ORM)** , metode tampilkanSemua() memanfaatkan JPA untuk mengambil seluruh data BarangEntity dengan perintah JPQL SELECT b FROM BarangEntity b ORDER BY b.id.
 
-  >  - Tampilan Data, seperti tampilkanTabelBarang(boolean showFooter) dan overload tampilkanTabelBarang() untuk menampilkan tabel barang dengan/ tanpa footer. Metode pembantu tampilkanSemua() memanggil tampilan tabel standar.
+  >  - **Menambah Data (CREATE)** , Melalui tambahBarang(), pengguna dapat memasukkan data baru.
 
-  >  - CRUD (Create, Read, Update, Delete). Pada program ini terdapat CRUD yang dapat membuat objek barangLelang, barangWarisan, atau barangUmum sesuai nilai sumber yang dimasukkan pengguna, lalu menambahkannya ke koleksi (tambahBarang()). Pengguna juga dapat memperbarui data berdasarkan ID dengan input opsional (perbaruiBarang()). Dan yang terakhir, pengguna dapat menghapus data dan juga diikuti dengan validasi dan konfirmasi (y/n) di akhiran (perbaruiBarang()).
+  >  - **Memperbarui Data (UPDATE)** , Pada metode perbaruiBarang(), pengguna dapat memperbarui data berdasarkan ID tertentu. Program menampilkan daftar barang, kemudian meminta input baru untuk kolom yang ingin diubah.
 
->    - Pencarian cariBarang(), pengguna dapat mencari koleksi barang dari AntikAesthetic berdasarkan nama/kategori/asal dan menampilkan ringkasan yang menyertakan label tipe (LELANG/WARISAN/UMUM).
+  >  - **Menghapus Data (DELETE)** , Fungsi hapusBarang() digunakan untuk menghapus data barang berdasarkan ID.
 
->    - Utilitas enterUntukLanjut(), daqpat digunakan untuk jeda navigasi, serta sekumpulan metode pembaca input (inputString, inputInt, inputDouble, dan versi opsionalnya) yang sudah dilengkapi pesan validasi tanpa mengubah teks asli.
+  >  - **Mencari Data (SEARCH)** , Melalui cariBarang(), pengguna dapat mencari data berdasarkan kata kunci nama, kategori, atau asal barang.
 
  **3. Penilaian.java**
 
-   > <img width="267" height="120" alt="image" src="https://github.com/user-attachments/assets/7c453b2c-6f16-4709-8d54-8f56d54474db" />
+   > <img width="268" height="135" alt="image" src="https://github.com/user-attachments/assets/79151e0c-d178-4080-b1ed-7abfecac2cc6" />
    
    > Kelas Penilaian.java terdapat di Packages com.mycompany.posttest1.service. Penilaian.java masuk dengan packgaes model karena kelas Penilaian bukan urusan tampilan atau input, melainkan aturan inti yang melekat pada entitas barang. Karena itu, ia semestinya berada bersama definisi entitas (Barang dan turunannya) di paket model.
 
@@ -360,7 +364,8 @@ Program yang saya buat terdiri dari beberapa kelas yang memiliki peran masing-ma
 
  **4. Barang.java**
  
-   > <img width="267" height="120" alt="image" src="https://github.com/user-attachments/assets/c3e4d611-14ad-46f7-a7f9-d45a2f8b5f99" />
+   > <img width="268" height="135" alt="image" src="https://github.com/user-attachments/assets/79151e0c-d178-4080-b1ed-7abfecac2cc6" />
+
 
    > Barang berada di package com.mycompany.posttest1.model karena ia adalah fondasi struktur data dan kontrak perilaku untuk seluruh barang dalam program ini.
 
@@ -372,7 +377,7 @@ Program yang saya buat terdiri dari beberapa kelas yang memiliki peran masing-ma
 
    **a. Subclass barangLelang.java**
 
-   > <img width="267" height="120" alt="image" src="https://github.com/user-attachments/assets/c3e4d611-14ad-46f7-a7f9-d45a2f8b5f99" />
+   > <img width="268" height="135" alt="image" src="https://github.com/user-attachments/assets/29819036-bbd9-405a-b53a-3391ab347b89" />
 
    > Kelas barangLelang.java ditempatkan di package model karena kelas ini merupakan turunan dari superclass Barang dan mewakili entitas domain dengan perilaku khusus untuk barang yang berasal dari lelang.
    
@@ -384,7 +389,7 @@ Program yang saya buat terdiri dari beberapa kelas yang memiliki peran masing-ma
     
    **b. Subclass baranngWarisan.java**
 
-   > <img width="267" height="120" alt="image" src="https://github.com/user-attachments/assets/c3e4d611-14ad-46f7-a7f9-d45a2f8b5f99" />
+   > <img width="268" height="135" alt="image" src="https://github.com/user-attachments/assets/98eaf34f-9b87-469a-9533-058a0a79ec99" />
 
    > Kelas barangWarisan.java ditempatkan di package model karena kelas ini merupakan turunan dari superclass Barang dan merepresentasikan entitas domain untuk barang yang berasal dari warisan.
 
@@ -394,13 +399,22 @@ Program yang saya buat terdiri dari beberapa kelas yang memiliki peran masing-ma
 
    **c. Subclass barangUmum.java**
 
-   > <img width="267" height="120" alt="image" src="https://github.com/user-attachments/assets/c3e4d611-14ad-46f7-a7f9-d45a2f8b5f99" />
+   > <img width="268" height="135" alt="image" src="https://github.com/user-attachments/assets/d2f8e615-cb41-4d03-a34e-e317310953b2" />
 
    > Kelas barangUmum.java juga berada di package model karena merupakan subclass dari Barang yang mewakili barang non-lelang dan non-warisan (misalnya hibah atau pembelian).
     
    > <img width="805" height="404" alt="image" src="https://github.com/user-attachments/assets/fe3b6740-ef01-45ef-94d3-cf86287ed4c2" />
 
    > Kelas barangUmum merupakan kelas turunan (subclass) yang meng-extends Barang untuk mewakili barang yang bukan lelang dan bukan warisan (misalnya hibah atau pembelian). Karena mewarisi dari Barang, seluruh atribut dasar seperti id, nama, kategori, asal, tahun, material, kondisi, sumber, dan hargaPerolehan sudah tersedia tanpa perlu didefinisikan ulang.
+
+**5. BarangEntity.java**
+
+   > <img width="268" height="135" alt="image" src="https://github.com/user-attachments/assets/79151e0c-d178-4080-b1ed-7abfecac2cc6" />
+
+   > <img width="655" height="772" alt="Screenshot 2025-10-05 053817" src="https://github.com/user-attachments/assets/dde8ac8b-316a-445d-923f-a40e1555da0a" />
+
+
+   > BarangEntity adalah entitas JPA yang menghubungkan objek Java dengan tabel barang di basis data. Kelas ini berfungsi sebagai representasi setiap baris data barang (seperti ID, nama, kategori, asal, dan sebagainya) yang dapat disimpan, diperbarui, dihapus, maupun dibaca melalui EntityManager (Hibernate/JPA).
 
 ---
 
