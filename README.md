@@ -421,6 +421,31 @@ Program yang saya buat terdiri dari beberapa kelas yang memiliki peran masing-ma
 
    > BarangEntity adalah entitas JPA yang menghubungkan objek Java dengan tabel barang di basis data. Kelas ini berfungsi sebagai representasi setiap baris data barang (seperti ID, nama, kategori, asal, dan sebagainya) yang dapat disimpan, diperbarui, dihapus, maupun dibaca melalui EntityManager (Hibernate/JPA).
 
+**6. Persistence.xml**
+
+   > <img width="229" height="74" alt="image" src="https://github.com/user-attachments/assets/ca1f6c15-cd0b-408c-b4d3-7bb4ac4de2f3" />
+
+   > <img width="685" height="465" alt="image" src="https://github.com/user-attachments/assets/71467555-a1fa-442f-bb1e-b82ed128c96c" />
+
+   > File persistence.xml berisi definisi persistence unit dengan nama lelangPU. Persistence unit inilah yang menjadi jembatan antara kode program dengan basis data. Di dalamnya tercantum informasi penting seperti jenis pustaka yang digunakan (Hibernate JPA 3.0), alamat koneksi database MySQL, serta entitas yang akan dipetakan, yakni BarangEntity. Dengan adanya pengaturan ini, Hibernate tahu bagaimana cara menghubungkan objek Java ke tabel yang sesuai di dalam database.
+   
+   > <img width="400" height="131" alt="image" src="https://github.com/user-attachments/assets/c859b051-df53-43d2-916d-38223de1ad46" />
+
+   > Selanjutnya, penggunaan EntityManager menjadi inti dari ORM. Dengan memanggil EntityManager em = ..., program dapat mulai bertransaksi dengan basis data tanpa perlu menulis SQL secara manual.
+
+**7. Pom.xml [postTest1]**
+
+  > <img width="171" height="53" alt="image" src="https://github.com/user-attachments/assets/9f9d7a0e-f7d8-442d-8a96-f8a9ef365aa1" />
+
+  > <img width="718" height="651" alt="Screenshot 2025-10-05 055502" src="https://github.com/user-attachments/assets/82532660-e7fb-45ca-9d71-2b3460ac3dfc" />
+
+  > <img width="726" height="228" alt="Screenshot 2025-10-04 142200" src="https://github.com/user-attachments/assets/ad65447e-5b03-4bba-822c-e3a1f79a3eb4" />
+
+
+**8. Dependencies**
+
+   > <img width="295" height="146" alt="image" src="https://github.com/user-attachments/assets/5b1bafa1-af4a-4bee-a6d2-e77a8f991873" />
+
 ---
 
 <h1 align="center">📝 Alur Program AntikAesthetic 📝</h1>
