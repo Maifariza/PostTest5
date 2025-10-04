@@ -416,6 +416,8 @@ Program yang saya buat terdiri dari beberapa kelas yang memiliki peran masing-ma
 
    > <img width="268" height="135" alt="image" src="https://github.com/user-attachments/assets/79151e0c-d178-4080-b1ed-7abfecac2cc6" />
 
+   > BarangEntity ditempatkan di package com.mycompany.posttest1.model karena ia mewakili model data (entitas JPA) untuk tabel barang.
+
    > <img width="655" height="772" alt="Screenshot 2025-10-05 053817" src="https://github.com/user-attachments/assets/dde8ac8b-316a-445d-923f-a40e1555da0a" />
 
 
@@ -424,6 +426,8 @@ Program yang saya buat terdiri dari beberapa kelas yang memiliki peran masing-ma
 **6. Persistence.xml**
 
    > <img width="229" height="74" alt="image" src="https://github.com/user-attachments/assets/ca1f6c15-cd0b-408c-b4d3-7bb4ac4de2f3" />
+
+   > Berkas persistence.xml terletak di dalam folder src/main/resources/META-INF (pada NetBeans ditampilkan di bagian Other Sources).
 
    > <img width="685" height="465" alt="image" src="https://github.com/user-attachments/assets/71467555-a1fa-442f-bb1e-b82ed128c96c" />
 
@@ -437,9 +441,25 @@ Program yang saya buat terdiri dari beberapa kelas yang memiliki peran masing-ma
 
   > <img width="171" height="53" alt="image" src="https://github.com/user-attachments/assets/9f9d7a0e-f7d8-442d-8a96-f8a9ef365aa1" />
 
+  > Berkas pom.xml berada di project Files dan berfungsi sebagai pusat konfigurasi Maven untuk mengatur identitas proyek, dependensi, serta pengaturan proses build dan menjalankan aplikasi.
+
   > <img width="718" height="651" alt="Screenshot 2025-10-05 055502" src="https://github.com/user-attachments/assets/82532660-e7fb-45ca-9d71-2b3460ac3dfc" />
 
+  > Berkas pom.xml (Project Object Model) merupakan inti konfigurasi proyek Maven yang digunakan untuk mengatur identitas proyek, pustaka yang dibutuhkan, serta pengaturan proses pembangunan (build). Berkas ini berfungsi seperti “peta kerja” yang memberi tahu Maven bagaimana proyek harus dikompilasi dan dijalankan.
+
   > <img width="726" height="228" alt="Screenshot 2025-10-04 142200" src="https://github.com/user-attachments/assets/ad65447e-5b03-4bba-822c-e3a1f79a3eb4" />
+
+  > Tampilan pada gambar tersebut merupakan hasil keluaran Maven setelah proyek berhasil dijalankan atau di-build di NetBeans. Tulisan “BUILD SUCCESS” menandakan bahwa seluruh proses pembangunan proyek selesai tanpa ada kesalahan (error).
+
+  > Saat perintah install dijalankan, Maven akan membaca konfigurasi dari pom.xml, lalu melakukan beberapa langkah otomatis, yaitu:
+
+  > - Mengunduh dan memeriksa pustaka (dependencies) yang diperlukan oleh proyek, seperti Hibernate, JPA, dan MySQL Connector.
+
+>   - Mengompilasi kode sumber (source code) menjadi bytecode Java.
+
+>   - Mengepak hasil kompilasi ke dalam berkas .jar sesuai pengaturan <packaging> di pom.xml.
+
+>   - Memasang (install) hasil build ke repositori lokal Maven di komputer agar bisa digunakan oleh proyek lain.
 
 
 **8. Dependencies**
