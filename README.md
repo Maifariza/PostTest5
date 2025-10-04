@@ -466,6 +466,19 @@ Program yang saya buat terdiri dari beberapa kelas yang memiliki peran masing-ma
 
    > <img width="295" height="146" alt="image" src="https://github.com/user-attachments/assets/5b1bafa1-af4a-4bee-a6d2-e77a8f991873" />
 
+   > Dependencies berperan sebagai daftar kebutuhan perangkat lunak yang akan otomatis diunduh dan dikelola oleh Maven. Setiap pustaka di bagian ini memiliki fungsi yang berbeda-beda.
+
+   > - Pustaka hibernate-core-6.4.6.Final.jar berperan sebagai mesin ORM (Object Relational Mapping) utama yang menjalankan seluruh operasi JPA seperti menyimpan, memperbarui, menghapus, dan membaca data dari database tanpa harus menulis SQL secara manual.
+
+   > - Pustaka jakarta.persistence-api-3.1.0.jar menyediakan antarmuka standar untuk JPA, termasuk anotasi seperti @Entity, @Table, dan @Id, yang digunakan pada kelas BarangEntity.
+
+   > - Kemudian, mysql-connector-j-9.4.0.jar berfungsi sebagai driver JDBC yang menjembatani koneksi antara aplikasi Java dan basis data MySQL atau MariaDB, sehingga program dapat mengirim dan menerima data melalui koneksi tersebut.
+
+   > - Selain itu, terdapat slf4j-simple-2.0.12.jar dan slf4j-api-2.0.12.jar yang digunakan untuk menampilkan log ke konsol.
+>    - SLF4J berperan sebagai sistem logging sederhana yang membantu menelusuri aktivitas Hibernate atau koneksi database selama program dijalankan.
+Adapun jakarta.transaction-api-2.0.1.jar menyediakan API untuk mengelola transaksi (misalnya begin, commit, dan rollback) yang digunakan Hibernate dan JPA saat berinteraksi dengan database.
+Sementara itu, pustaka protobuf-java-4.31.1.jar merupakan dependensi tambahan yang secara otomatis diunduh bersama MySQL Connector, karena dibutuhkan oleh versi terbaru driver tersebut untuk proses komunikasi internal.
+
 ---
 
 <h1 align="center">📝 Alur Program AntikAesthetic 📝</h1>
