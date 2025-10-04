@@ -104,10 +104,6 @@
 
    > Selanjutnya, penggunaan EntityManager menjadi inti dari ORM. Dengan memanggil EntityManager em = ..., program dapat mulai bertransaksi dengan basis data tanpa perlu menulis SQL secara manual.
 
-   > <img width="734" height="240" alt="image" src="https://github.com/user-attachments/assets/6562e09d-34f7-4373-982f-34b980ce1770" />
-
-> Tampilan Jika Berhasil di Build
-
 ---
 
 <h1 align="center">📌 Penjelasan Penerapan Abstraction 📌</h1>
